@@ -1,0 +1,127 @@
+PACKAGE MANAGEMENT COMMANDS
+For installing the package
+yum install package -y
+# Example:
+yum install git -y
+For removing the package
+yum remove package -y
+# Example:
+yum remove httpd -y
+For update the package
+yum update -y
+# Example:
+yum update -y
+For search the package
+yum search package
+# Example:
+yum search nginx
+For information about the package
+yum info package
+# Example:
+yum info docker
+To check installed packages
+yum list installed
+# Example:
+yum list installed
+To check updates
+yum check-update
+# Example:
+yum check-update
+To clear cache
+yum clean all
+# Example:
+yum clean all
+To reinstall package
+yum reinstall package -y
+# Example:
+yum reinstall git -y
+To list available packages
+yum list available
+# Example:
+yum list available
+Show dependencies
+yum deplist package
+# Example:
+yum deplist httpd
+Install specific version
+yum install package-version
+# Example:
+yum install httpd-2.4.37 -y
+Transaction history
+yum history
+# Example:
+yum history
+Undo transaction
+yum history undo <id>
+# Example:
+yum history undo 5
+Redo transaction
+yum history redo <id>
+# Example:
+yum history redo 5
+Transaction details
+yum history info <id>
+# Example:
+yum history info 5
+REPOSITORY MANAGEMENT
+List enabled repos
+yum repolist
+# Example:
+yum repolist
+List all repos
+yum repolist all
+# Example:
+yum repolist all
+Enable repo
+yum config-manager --set-enabled repo-name
+# Example:
+yum config-manager --set-enabled AppStream
+Disable repo
+yum config-manager --set-disabled repo-name
+# Example:
+yum config-manager --set-disabled AppStream
+Repo info
+yum repoinfo
+# Example:
+yum repoinfo
+Disabled repos
+yum repolist disabled
+# Example:
+yum repolist disabled
+Install from repo
+yum install package --enablerepo=repo-name
+# Example:
+yum install nginx --enablerepo=epel -y
+Disable repo temporarily
+yum install package --disablerepo=repo-name
+# Example:
+yum install nginx --disablerepo=epel
+GROUP MANAGEMENT COMMANDS
+List groups
+yum group list
+# Example:
+yum group list
+Installed groups
+yum group list installed
+# Example:
+yum group list installed
+Available groups
+yum group list available
+# Example:
+yum group list available
+Install group
+yum groupinstall "Group Name" -y
+# Example:
+yum groupinstall "Development Tools" -y
+Remove group
+yum groupremove "Group Name" -y
+# Example:
+yum groupremove "Development Tools" -y
+Group info
+yum group info "group-name"
+# Example:
+yum group info "Development Tools"
+Update group
+yum group update "group-name"
+# Example:
+yum group update "Development Tools"
