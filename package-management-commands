@@ -1,0 +1,131 @@
+In package management we using either dnf or yum 
+
+>For installing the package 
+   yum install package -y
+
+>For removing the package
+   yum remove package -y
+
+>For update the package 
+   yum update -y   
+
+>For search the package 
+   yum search package
+
+>For information about the package 
+    yum info package
+
+>To check the list installed package 
+    yum list installed
+
+>To check the update
+    yum check-update
+
+>To clear the stored package data
+    yum clean all
+
+>To reinstall the package
+    yum reinstall package -y
+
+>To list all available packages
+    yum list available 
+
+>Display the all dependies of the package
+    yum deplist package
+
+>To install specific version package
+    yum install package-version
+
+>Shows the all past install remove and update package [transaction history] 
+    yum history
+
+>To revert the previous oprations of using its transaction id
+    yum history undo <id>
+
+>To read the same operation again
+    yum history redo <id>
+
+>Check the history package install versions dependies and view details of the transacton
+    yum history info <id>    
+
+>To know the package how many times installed 
+    yum history |grep package
+    
+    yum history list git
+>to check the package source 
+    yum list packsge    
+
+<REPOSITORY MANAGEMENT>:
+*****************************************
+> List of all enable repositories
+   yum repolist
+
+>List all enabled and disable repositories
+   yum repolist all
+
+>To enable the disable repository
+   yum config-manager --set-enable repo-name
+
+>Disable the enanble repository
+  yum config-manager --set-disable repo-name
+
+>To see full details of repository 
+   yum repoinfo
+
+>To see all disabled repository
+  yum repolist disabled
+
+>Install the package at pariticular repository
+   yum install package --enablerepo=repo-name
+
+>disable the package temporarliy at a particular repository
+   yum install package --diaablerepo=repo-name
+
+GROUP MANAGEMENT COMMANDS: 
+>list of all groups
+  yum group list
+
+>To check the installed groups
+  yum list installed groups
+
+>check the avaliable group installed
+  yum list available groups
+
+>Installing the group package 
+  yum groupinstall "Server with GUI" -y  
+                       |
+                      example 
+>Removing the installed group package 
+  yum groupremove "Server with GUI" -y
+
+>List available groups
+  yum group list avilable 
+
+>Check the which group installed 
+   yum group list installed
+
+>To show the group details 
+   yum group info "group-name"
+
+>Update the group 
+     yum group update "group-name"
+
+>     
+
+
+
+       
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
