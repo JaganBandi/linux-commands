@@ -1,0 +1,101 @@
+SHEDULE MANAGEMENT COMMANDS
+****************************************************
+>cron job :cron job is sheduling task in linux that runs automatically specific time and interval
+it managed a background service is called a cron 
+>To ceate and edit the cron job
+   crontab -e
+
+>To check the list of cron tab
+   crontab -l
+
+>To remove the cron job 
+   crontab -r
+
+>To check list of cron jobs from another user 
+   crontab -u username -l
+
+  example:crontab -u jagan -l
+
+>To create the crontab at a specific user 
+   crontab -u username -e
+    example:crontab -u jagan -e
+    "Here we create a cron job at specific user"
+
+>TO check the crontab is active or not 
+   systemctl status crond
+
+>Start the cronjob service
+   systemctl start crond
+
+>Enable the cron service
+   systemctl enable crond
+
+>Restart the cron service
+    systemctl restart crond
+
+>Stop cron service 
+    systemctl stop crond
+
+>How to work the cron job
+
+* * * * * command
+
+1) * =minutes
+2) * =Hours
+3) * =Day of the month
+4) * =month 
+5) * =Day of the week
+
+example:
+       35 11 31 3 * echo "hello jagan" >> /tmp/cron-test.txt
+//Here >> is save /tmp.cron-test.txt is the place of the location
+
+>if you create a job in root user then you switch another user the job job is cannot be remove
+  command: crontab -r =to remove the job only in root user
+
+  if you create a job another user then will remove the job 
+    command :crontab -u username -r
+
+   example: crontab -u jagan -r
+
+
+
+
+           
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
