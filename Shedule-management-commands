@@ -74,7 +74,79 @@ example:
 
      4)removing the files and directories at specific location
      22 11 09 * * rm -rf /opt/directory-name
-     
+
+
+>crontab is a background process,where to check the output and how to work the cronjob
+   it can placed a one specific location
+     cat /var/log/cron
+
+*******************************************************
+at commands
+*******************************************************
+atd is a background demon service in linux that executes the sheduled jobs linux by the at command by the sheduled time
+>install atd
+  yum install atd -y
+
+>start the atd services
+
+ systemctl start atd
+
+>enable the atd services    
+
+systemctl enable atd
+
+>check the status atd
+
+systemctl status atd
+
+This command is used to sheduling the job automatically ,it is a one-time shedulling task onece shedulling the task it is automatically removed
+
+>How to write these command
+  example:
+  1)at now +2 minutes
+then enter into the job
+ if you write 
+ at> echo "hello world > /tmp/time.txt" |at now + 2 minutes
+> it is a single line formate 
+ apply the ctrl+d enter
+ then the job can do the sheduling time 
+
+ >it worked on 12 and 24 hours formate
+
+ command:at 12:30pm
+
+ >list of all jobs 
+
+  command:1)atq
+          2)at -l
+
+ >view the job 
+  command :at -c
+
+>view the specific job
+  command :at -c job-id
+example :at -c 5
+>to delete the job 
+  command :atrm
+
+>to delete the specific job 
+  command :atrm job-id
+example : atrm 5
+
+>In ineractive method
+command :at now +3 minutes
+   enter the job
+   type the commands 
+   example :echo "hello jagan > /tmp/test.1"
+   save ctrl +d
+
+In interactive method we can enter the multiple commands
+It is slower method and it can be used complex jobs
+
+>
+
+
+
 
 
 
