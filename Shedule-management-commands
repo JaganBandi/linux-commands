@@ -2,7 +2,7 @@ SHEDULE MANAGEMENT COMMANDS
 ****************************************************
 >cron job :cron job is sheduling task in linux that runs automatically specific time and interval
 it managed a background service is called a cron 
->To ceate and edit the cron job
+>To ceate the cronjob and edit the exsisting cron job
    crontab -e
 
 >To check the list of cron tab
@@ -57,6 +57,25 @@ example:
     command :crontab -u username -r
 
    example: crontab -u jagan -r
+
+>instaling the packages and applying the commands at sheduling time by using cronjob
+  
+  for example: 1)install the packages
+  20 11 07 * * yum install git -y
+     in above example install git at give time
+     
+     2)applying commands 
+     20 11 07 * * systemctl start git 
+     20 11 07 * * systemctl enable git 
+     20 11 07 * * systemctl status git
+
+     3)removing files and directories
+      21 11 08 * * rm -rf directory name
+
+     4)removing the files and directories at specific location
+     22 11 09 * * rm -rf /opt/directory-name
+     
+
 
 
 
