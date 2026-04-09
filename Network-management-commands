@@ -1,0 +1,47 @@
+Network management commands
+***********************************
+1.check the ip address
+
+  command :1. ip addr
+           2. ip a
+
+2.check the gateway
+>check the default gateway and network routing
+
+  command : ip route
+
+3.check the test internet connectivity
+>check the system can reach the internet without DNS
+
+  command : ping -c 3 8.8.8.8
+
+4.check the DNS 
+check the DNS working 
+  
+  command : ping -c 3 google.com
+
+>if the DNS is not working check by using this commands
+  command : nslookup google.com
+            host google.com
+            dig google.com
+>check the DNS without internet 
+  command :ping 8.8.8.8
+
+>DNS is not working
+  a.check the internet 
+     ping 8.8.8.8
+  b.check the DNS
+     nslookup google.com
+  c.check the DNS server 
+     cat /etc/resolv.conf
+  d.fix DNS server
+     echo "nameserver 8.8.8.8" > /etc/resolv.conf            
+
+5.check the open ports
+>using which services are running and which ports are open
+
+  command : ss -tulnp
+>only show ssh details 
+  command :ss -tulnp | grep 22
+  
+6.                 
