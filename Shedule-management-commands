@@ -166,6 +166,7 @@ anacronjob is similar to crontab but it simple difference crontab is works only 
   3)  /etc/cron.monthly   
 
 >cron.daily is a folder here we place a script it will run once perday
+it runs every day after 5 minutes when the system reboot
    example:
    create a one anacron job
    got to cd /etc/cron.daily
@@ -178,9 +179,36 @@ anacronjob is similar to crontab but it simple difference crontab is works only 
    if you run the job forcefully by using this command :anacron -f
 
     give the permissions 
-     chmod +x anacron-job
+     chmod +x /etc/cron.daily/anacron-job
 
   check the job location 
-     cat /tmp/anacron-test.txt   
+     cat /tmp/anacron-test.txt
 
+  run-parts the script
+  run-parts means runs all scripts inside a directory one by one
+
+     run-parts /etc/cron.daily/anacron-job      
+
+>cron.weekly:cron.weekly is runs weekly after 25 minutes when the system reboot
+      
+   /etc/cron.weekly:it is a one directory inside the directory we create a jobs
+
+   example :
+    create a one job 
+      vim weekly.job
+
+   inside the weekly.job
+     #!/bin/bash
+     /usr/bin/yum update -y >> /var/log/weekly-test.job
+
+   <save and exit>
+
+   give the permissions 
+     chmod +x /etc/anacron/cron.weekly/weekly.job
+    
+    run parts the cron.weekly
+
+     run-parts /etc/cron.weekly
+
+>cron.monthly:runs the job monthly after 45 minutes when the system reboot     
 
