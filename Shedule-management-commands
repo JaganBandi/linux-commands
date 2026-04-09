@@ -79,6 +79,8 @@ example:
 >crontab is a background process,where to check the output and how to work the cronjob
    it can placed a one specific location
      cat /var/log/cron
+>system wide cronjobs are located 
+    /etc/crontab     
 
 *******************************************************
 at commands
@@ -108,7 +110,7 @@ then enter into the job
  if you write 
  at> echo "hello world > /tmp/time.txt" |at now + 2 minutes
 > it is a single line formate 
- apply the ctrl+d enter
+ apply the ctrl+d enter [save and exit]
  then the job can do the sheduling time 
 
  >it worked on 12 and 24 hours formate
@@ -143,50 +145,42 @@ command :at now +3 minutes
 In interactive method we can enter the multiple commands
 It is slower method and it can be used complex jobs
 
->
+>at jobs are place in 
+   /var/spool/at/
+****************************************
+batch 
+****************************************
+batch :batch command is similar to at commands but batch command is works only the when system load is low
+command & syntax : batch
+****************************************
+anacron
+****************************************
+anacronjob is similar to crontab but it simple difference crontab is works only when is system is powered on , anacron is works when system was powred off ,it can be do the job sheduled time when the system was off 
 
+>ancron is placed at the location is 
+   cat /etc/anacrontab
 
+>Here three commands located in this location 
+  1)    /etc/cron.daily
+  2)   /etc/cron.weekly
+  3)  /etc/cron.monthly   
 
+>cron.daily is a folder here we place a script it will run once perday
+   example:
+   create a one anacron job
+   got to cd /etc/cron.daily
+   vim anacron-job
+   write the script like this
+      #!/bin/bash
+      echo "hello world" >> /tmp/ancron-test.txt
+      save and exit 
 
+   if you run the job forcefully by using this command :anacron -f
 
+    give the permissions 
+     chmod +x anacron-job
 
-
-
-           
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  check the job location 
+     cat /tmp/anacron-test.txt   
 
 
