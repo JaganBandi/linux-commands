@@ -10,21 +10,40 @@ Network management commands
 
   command : ip route
 
-3.check the test internet connectivity
+3.check the gateway connectivity
+  command : ping -c 4 route-ip
+
+  example : ping -c 4 192.168.106.2 
+
+>it shows like :64 bytes from 192.168.106.2: icmp_seq=1 ttl=128 time=0.193 ms
+           4 packets transmitted, 4 received, 0% packet loss  
+  Here the packet is small pieace of data sents over a network
+  each packet has three
+   a.Header : Header is works source ip and destination like (8.8.8.8)
+   b.Date: Date is gives the actual data
+   c.Footer:Footer is for error checking
+
+4.check the test internet connectivity
 >check the system can reach the internet without DNS
 
   command : ping -c 3 8.8.8.8
 
-4.check the DNS 
+5.check the DNS 
 check the DNS working 
   
   command : ping -c 3 google.com
 
+6.check the DNS config file
+  command : cat /etc/resolv.conf
+  shows the which dns server runs our system
+
 >if the DNS is not working check by using this commands
-  command : nslookup google.com
+  command : nslookup google.com (Debug the DNS issue and ping works domain is not working)
             host google.com
-            dig google.com
+            dig google.com (Advanced DNS tool like:detailed info like TTL, query time)
+
 >check the DNS without internet 
+
   command :ping 8.8.8.8
 
 >DNS is not working
@@ -35,13 +54,45 @@ check the DNS working
   c.check the DNS server 
      cat /etc/resolv.conf
   d.fix DNS server
-     echo "nameserver 8.8.8.8" > /etc/resolv.conf            
+     echo "nameserver 8.8.8.8" > /etc/resolv.conf 
 
-5.check the open ports
+7.check the open ports
 >using which services are running and which ports are open
 
   command : ss -tulnp
 >only show ssh details 
-  command :ss -tulnp | grep 22
+  command : ss -tulnp | grep 22
   
-6.                 
+8.Check the firewall settings for the active zone
+  command :firewall-cmd --list-all
+
+9.Check the hostname 
+  
+  command : hostname
+
+10.Quick ip check
+  command : hostname -I
+  this command shows all ip address in our system
+
+11.Check interface stastics
+  command :ip -s link
+  shows the network interface stastics
+
+12.Check the MAC address
+  command : ip neigh
+  shows ARP table(table which maps ip address and MAC address for local network communication )
+  check the communication gateway  
+  verify network devices
+  troubleshooting connectivity
+
+13.check the path and destination
+  command : traceroute 8.8.8.8
+  shows the path (hops) between your system and destination
+
+  if command is not found then install 'yum install traceroute -y'
+
+14.Check the active connections,listening ports,and ports
+  command : netstat -tulnp
+     
+
+
