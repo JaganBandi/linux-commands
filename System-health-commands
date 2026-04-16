@@ -1,0 +1,110 @@
+SYSTEM HEALTH COMMANDS 
+**************************************
+1.command : uptime
+    >it display the how long the system is running and number of users logged in,and shows the load average
+
+2.command : top
+ shows the real time system performance
+ .cpu usage
+ .memory usage 
+ .running processor
+ .system load
+
+3.command : free -h
+ it shows the meomory usage and swap meamory in readable formate
+
+4.command : df -h
+ it shows the disk space and storage health
+
+ check the specific directory
+ command :df -h /var
+
+5.command : lscpu
+ it display the cpu details like:core,architecture,speed,threads
+
+6.command :ps -ef
+ it shows the all running process in the system ,it shows the systemv format
+ and it is process structure 
+
+7.command :vmstat 
+ it shows the virtual machine statics
+
+ vmstat 1 5
+ it shows the statics 5 times per second
+
+8.command :iostat   
+ it shows the disk performance
+ -disk bottle necks
+ -slow performances issues
+
+ command not found :yum install sysstat -y
+
+ command:iostat -x 1 3
+ i shows the disk performance 1 second 3 times
+
+9.command :sar
+ it shows the hostorical data
+ cpu usage
+ memory usage
+ network stats
+
+ command :sar -u 1 3
+ -u is cpu utilization
+ 1 second per 3 times
+
+10.command :dmesg
+ it shows the kernel system messages
+
+>to check the system errors,debug the hardware issues and see the boot messages,identify the network and disk problems
+
+ commands :dmesg | grep -i errors
+           dmesg | grep -i disk
+           dmesg | tail -20
+           dmesg | grep -i usb
+
+11.command :journalctl
+ it shows the complete system logs
+ >service failure
+ >login issues
+ >system errors
+
+ command :journalctl -xe |tail -20
+
+12.command :ps -aux 
+ it is simillar to the ps -ef command but here ps -aux is a BSD format
+ it is a resource usage
+
+ find the top cpu process
+ command : ps aux --sort=-%cpu | head
+
+ find the top memory process
+ command : ps aux --sort=-%mem | head
+
+13.command :free -m
+ it is shows the memory usage in megabytes 
+
+14.command :who
+ who command shows the current user login and user details
+  tty = local login
+  pts = remote login
+
+15.command : last
+ last is used to check the login history for the userd ,logedout time and source ip for security auditing
+
+ command : last | head -10
+           last -5
+           lastb
+
+16.command : du -h
+ it shows the folder size 
+
+command : du -sh
+          du -sh *
+
+
+          
+
+
+
+
+
