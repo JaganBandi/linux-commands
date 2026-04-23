@@ -139,11 +139,32 @@ number                permissions
 7                       rwx
 
 
-     
+1.Change the owner only
 
+ command : chown username directory name
 
+ example : chown jagan continered
 
+2.Change owner and group 
+ command : chown user:group directory name
 
+ example : chown jagan:bottle continered
 
+3.Change the ownership for all files inside the directory name
+ command : chown -R username:groupname directory name
+
+ example : chown -R jagan:bottle continered
+
+5.Change only group name 
+ command : chown :groupname directory name
+
+chmod : this command is used to give the permission to the files
+
+ examples:  
+    a.command : chmod 345 file name
+    b.command : chmod 456 file name
+    c.command : chmod 777 file name
+
+>it gives directly permission to the file by using chmod command 
 
 

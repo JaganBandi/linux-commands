@@ -20,7 +20,7 @@ Network management commands
   Here the packet is small pieace of data sents over a network
   each packet has three
    a.Header : Header is works source ip and destination like (8.8.8.8)
-   b.Date: Date is gives the actual data
+   b.Data: Data is gives the actual data
    c.Footer:Footer is for error checking
 
 4.check the test internet connectivity
@@ -38,6 +38,9 @@ check the DNS working
   shows the which dns server runs our system
 
 >if the DNS is not working check by using this commands
+
+>if nslookup command is not found then "yum install bind-utils -y"
+
   command : nslookup google.com (Debug the DNS issue and ping works domain is not working)
             host google.com
             dig google.com (Advanced DNS tool like:detailed info like TTL, query time)
@@ -93,6 +96,23 @@ check the DNS working
 
 14.Check the active connections,listening ports,and ports
   command : netstat -tulnp
-     
+  
+15.Check the network interface status
+  command : nmcli device status
+
+  check if network is active and identify the issues early
+
+16.Check the connection details
+  command : nmcli connection show
+  
+  show all saved connection profiles
+
+17.shows the complete network configuration of connection 
+  command : nmcli connection show ens160
+
+18.  
+
+
+
 
 
