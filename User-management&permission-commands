@@ -1,0 +1,149 @@
+User management & permission commands
+****************************************
+User management commands
+a.user
+b.group
+c.usermod
+d.chage
+****************************************
+a.user
+****************************************
+1.Check the current user
+  command : whoami
+> it shows the current username 
+
+2.Check the user details
+  command : id username
+>it shows the userid(uuid),groupid(ggid) and groups ,details about the user
+
+3.Create a new usrname 
+  command : useradd username
+
+  example : useradd jagan
+
+>user name are placed in the :cd /home
+
+4.Set the password to the username
+  command : passwd username
+
+  example : passwd jagan 
+
+5.To switch the one user account to another user
+  command : su -
+    su=switch user
+
+  command : su - jagan
+
+6.View the password files in system
+  command : cat /etc/shadow
+
+7.Check the user list
+  command :cat /etc/passwd
+
+8.To delete the username with home directory
+  command :userdel -r username
+
+9.To delete the user acoount from the system 
+  command : userdel username
+********************************************
+b.group commands
+********************************************
+1.Create a new group 
+  command : groupadd groupname
+
+2.Modify the group name
+  command : groupmod -n new name old name
+
+3.Delete the group name
+  command : groupdel groupname
+
+********************************************
+c.usermod
+********************************************
+1.Add user to the group
+  command : usermod -aG groupname username
+
+ >Check the user can add the group
+   cat /etc/group
+
+2.change the username 
+  command : usermod -l newname oldname
+
+3.Lock the user account 
+  command : usermod -L username
+
+  example:usermod -L manage jagan
+
+4.Check the user acount is locked or not
+  command : passwd -S username
+
+  example : passwd -S jagan
+
+5.Unlock the user account
+  command : usermod -U username
+
+  example : usermod -U jagan
+
+   >Apply the command to check user user accout is unlock
+  command : passwd -S jagan
+*******************************************************
+d.chage
+*******************************************************
+1.List of password agging information
+  command : chage -l username
+
+  example : chage -l jagan
+
+2.Set maximum password 
+  command : chage -M days username
+
+  example : chage -M 11 jagan
+
+3.Set minimum password age
+  command : chage -m days jagan
+
+4.Set warning before password expiry
+  command : chage -W days username
+
+5.Set Account expiry date
+  command : chage -E yyyy-mm-dd username
+
+6.Set password to never expire
+  command : chage -m -1 username
+
+7.Set account to never expire
+  command : chage -E -1 username 
+
+8.Set password inactive days
+  command : chage -I days username
+
+9.Disable the inactive lock
+  command : chage -I -1 username
+***********************************************
+User permissions 
+***********************************************
+there are three types of permissions 
+1. read(r)
+2. write(w)
+3. execute(x)
+
+number                permissions
+----------            ------------
+0                       ---
+1                       --x
+2                       -w-    
+3                       -wx  
+4                       r--
+5                       r-x
+6                       rw-
+7                       rwx
+
+
+     
+
+
+
+
+
+
+
