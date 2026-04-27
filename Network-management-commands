@@ -18,7 +18,7 @@ Network management commands
 >it shows like :64 bytes from 192.168.106.2: icmp_seq=1 ttl=128 time=0.193 ms
            4 packets transmitted, 4 received, 0% packet loss  
   Here the packet is small pieace of data sents over a network
-  each packet has three
+  each packet has three phases
    a.Header : Header is works source ip and destination like (8.8.8.8)
    b.Data: Data is gives the actual data
    c.Footer:Footer is for error checking

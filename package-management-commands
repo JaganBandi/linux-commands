@@ -1,3 +1,5 @@
+Package management commands
+*************************************************
 In package management we using either dnf or yum 
 
 >For installing the package 
@@ -79,7 +81,7 @@ In package management we using either dnf or yum
    yum install package --enablerepo=repo-name
 
 >disable the package temporarliy at a particular repository
-   yum install package --diaablerepo=repo-name
+   yum install package --disablerepo=repo-name
 
 GROUP MANAGEMENT COMMANDS: 
 >list of all groups
@@ -110,7 +112,39 @@ GROUP MANAGEMENT COMMANDS:
 >Update the group 
      yum group update "group-name"
 
->     
+
+RPM COMMANDS:
+*******************************
+one command with many options
+
+rpm -ivh --nodeps --replacepkgs --test package.rpm
+
+-i=install(to install the .rpm package)
+v=verbous (to give the detailed information)
+h=hash(show the progress bar)
+nodeps=ignore the dependies checking
+relacepkgs=to reinstall the package if already installed
+test=to test the package
+
+>To install the package 
+  rpm -ivh package.rpm
+
+>To give single line information installed package
+  rpm -q package-name
+
+>To give detailed information about installed package
+  rpm -qi package-name
+
+>to upgrade package manually 
+  rpm -Uvh package.rpm
+
+>  
+
+
+
+
+
+
 
 
 
