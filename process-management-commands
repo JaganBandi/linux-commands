@@ -1,0 +1,57 @@
+Process management commands
+******************************************
+1.Show the all the running process in system
+
+  command : ps -ef
+
+  command : ps -ef | grep systemd
+
+    ps-ef =shows all the running process
+     (|)=pipe
+     grep systemd=filtering only containing systemd
+
+  command : ps -ef | grep systemd | grep -v grep
+   
+   >removes unwanted grep pipelines
+
+2.Check the cpus&memory usage
+
+  command : top
+
+3.Runs a process for 100 seconds
+
+  command : sleep 100
+  
+  stop&pause the job: Ctrl+z
+
+4.Show your stopped process
+
+  command : jobs
+
+5.Background resume
+  resume a stopped job and run it background
+
+  command : bg %1
+
+6. shows a detailed info about a specific process
+  command : ps -fp <pid>
+
+  example : ps -fp 982
+
+
+7.Killing the process
+
+ command : kill pid ---------->process id
+
+ example : kill 1782
+
+8.Forcefully stop a process
+
+ command : kill -9 pid
+
+ example : kill -9 1732
+
+
+9. 
+    
+
