@@ -1,0 +1,88 @@
+Systemd Commands
+*****************************
+Systemd is a service and system manager used in linux,it helps administrators manage
+like services,processors,boot opeerations,logs,system state
+
+the main command used in systemd is
+ 
+ "systemctl"
+
+1.Start the Service
+  
+  command : systemctl start service-name
+
+  example : systemctl start jenkins
+2.Check the Status
+
+ command : systemctl status service-name
+
+ example : systemctl status jenkins
+
+ if you want to direct move to the next page without using 'q'
+
+ command : systemctl status service-name --no-page
+
+ example : systemctl status jenkins --no-page
+
+3.Stop a Service
+
+ command : systemctl stop service-name
+ 
+ example : systemctl stop jenkins
+
+4.Restart the Service
+ 
+ command : systemctl restart service-name
+
+ example : systemctl restart docker
+
+5.Enable the Service at boot
+ 
+ command : systemctl enable service-name
+
+ example : systemctl enable nginx
+
+6.Disable the Service at boot
+ 
+ command : systemctl disable service name
+
+ example : systemctl disable jenkins
+
+7.Reload the Service
+ 
+ command : systemctl reload service-name
+
+ example : systemctl reload jenkins
+
+8.Check if the Service is active
+
+ command : systemctl is-active service-name
+
+ example : systemctl is-active jenkins
+
+9.Check if the service is enable 
+
+ command : systemctl is-enable service-name
+
+ example : systemctl is-enable jenkins
+
+10.Check the failed services in the system
+
+ command : systemctl --failed
+
+11. Show the logs avaliable sevices
+
+ command : journalctl -u service-name
+
+ example : journalctl -u docker
+
+12.Shows the live system logs 
+ 
+ command : journalctl -f
+
+ 
+
+
+
+
+
