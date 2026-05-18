@@ -1,0 +1,76 @@
+MYSQL COMMANDS
+********************************
+Command 1: SHOW DATABASES;
+
+->To see the databases on a server
+
+Command 2: CREATE DATABASE database_name;
+
+->To create a database
+
+Command 3: USE database_name;
+
+->This command is used to select a database
+
+Command 4: DROP DATABASE database_name;
+
+->Delete a database
+
+command 5: CREATE TABLE table_name(
+              id INT,
+              name VARCHAR(50)
+              );
+
+->Used to create a table
+
+Command 6: SHOW TABLES;
+
+->To see the tables
+
+Command 7: DESC table_name;
+
+->To Describe tables;
+
+Command 8: DROP TABLE table_name;
+
+->To delete a table
+
+Command 9: a.INSERT INTO table_name
+           VALUES(value1,value2);
+->Insert the values in a table
+
+           b.INSERT INTO table_name
+            VALUES(value1,value2),(value1,value2);
+->Insert the multiple values
+ here,strings are use single qutoes,number do not use quotes            
+
+Command 10:SELECT * FROM table_name;
+ 
+ ->To view the data in the particular table
+
+Command 11:SELECT * FROM table_name WHERE condition;
+
+ Example: SELECT * FROM students WHERE id=1001;
+
+->Used to filtering the data
+
+Command 12:UPDATE table_name SET column_name=value WHERE condition;
+
+->Ued to update the existing table
+
+ Example: UPDATE students SET name='jagan' WHERE id=1001;
+
+Command 13:DELETE FROM table_name WHERE condition;
+
+ ->Used to deleting the duplicate & particular data
+
+ Example:DELETE FROM students WHERE id=1002;
+
+
+
+
+
+
+
+
+

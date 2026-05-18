@@ -1,0 +1,90 @@
+FIREWALL MANAGEMENT COMMANDS
+**********************************
+1.Check the firewall state
+ command : firewall-cmd --state
+
+2.View the current firewall rules
+ command : firewall-cmd --list-all
+
+3.Show the configure port numbers
+ command : firewall-cmd --list-ports
+
+4.Firewall host configuration to allow the port number 
+ command : firewall-cmd --permanent --add-port=(port number)/tcp
+
+ example : firewall-cmd --permanent --add-port=8080/tcp
+
+5.Make the port number active
+ command : firewall-cmd --reload
+
+6.Check the allowed services in the current zone
+ command : firewall-cmd --list-services
+ 
+7.Add the services
+  command : firewall-cmd --permanent --add-service=http
+        firewall-cmd --reload                       |
+                                                 example  
+ > check the if the service is add :firewall-cmd --list-services
+                                                   
+8.Remove the added services temporarly (after reboot came back again)
+   command : firewall-cmd --remove-service=http
+       firewall-cmd --reload <-----------> applied the saved configs
+
+9.Remove the added service permanently 
+  command : firewall-cmd --permanent --remove-sevices=http
+    firewall-cmd --reload
+
+10.Remove the added port numbers
+   command : firewall-cmd --remove-port=8080/tcp
+     firewall-cmd --reload               |
+                                       example
+
+11.Check the active zones
+  whcich is active 
+  which network interfaced is attached
+  how firewall applies the traffic rules
+
+  command : firewall-cmd --get-active-zones
+
+12.List avliable services
+
+ command : firewall-cmd --get-services 
+
+**************************************************************
+FIREWALL SEVICE COMMANDS
+**************************************************************
+13.Check the status firewalld
+
+ command : systemctl status firewalld
+
+14.Start firewalld
+
+ command : systemctl start firewalld
+
+15.Enable the firewall
+
+ command : systemctl enable firewalld
+
+16.Restart the firewalld
+
+ command : systemctl restart firewalld
+
+17.Disable the firewalld after reboot
+
+ command : systemctl disable firewalld
+
+**************************************************
+ZONE COMMANDS
+**************************************************
+18.Show the default zone
+
+ command : firewall-cmd --get-default-zone
+
+19.List all rules in a specific zone
+
+ command : firewall-cmd --zone=public --list-all
+
+20.Change default zone
+
+ command : firewall-cmd --set-default-zone=public 
+ 

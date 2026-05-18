@@ -15,7 +15,7 @@ SYSTEM HEALTH COMMANDS
 
 4.command : df -h
  it shows the disk space and storage health
-
+    
  check the specific directory
  command :df -h /var
 
@@ -43,6 +43,7 @@ SYSTEM HEALTH COMMANDS
  i shows the disk performance 1 second 3 times
 
 9.command :sar
+  sar:System activity repotor
  it shows the hostorical data
  cpu usage
  memory usage
@@ -51,6 +52,8 @@ SYSTEM HEALTH COMMANDS
  command :sar -u 1 3
  -u is cpu utilization
  1 second per 3 times
+
+ ->sar stores historical system performance data in '/var/log/sa/ ' files
 
 10.command :dmesg
  it shows the kernel system messages

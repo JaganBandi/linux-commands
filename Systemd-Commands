@@ -62,9 +62,9 @@ the main command used in systemd is
 
 9.Check if the service is enable 
 
- command : systemctl is-enable service-name
+ command : systemctl is-enabled service-name
 
- example : systemctl is-enable jenkins
+ example : systemctl is-enabled jenkins
 
 10.Check the failed services in the system
 

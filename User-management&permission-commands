@@ -16,7 +16,7 @@ a.user
   command : id username
 >it shows the userid(uuid),groupid(ggid) and groups ,details about the user
 
-3.Create a new usrname 
+3.Create a new username 
   command : useradd username
 
   example : useradd jagan
