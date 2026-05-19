@@ -1,7 +1,7 @@
 Systemd Commands
 *****************************
 Systemd is a service and system manager used in linux,it helps administrators manage
-like services,processors,boot opeerations,logs,system state
+like services,processors,boot operations,logs,system state
 
 the main command used in systemd is
  
@@ -80,9 +80,44 @@ the main command used in systemd is
  
  command : journalctl -f
 
+13.Display the logs current boot session 
+  
+ command : journalctl -b
+
+ ->used after reboot check
+
+ .startup services
+ .boot eroors
+ .kernal message
+ .failed componentes
+
+14.View the current running services
+
+  command : systemctl list-unit --type=service
+
+-->Display the current running services
+
+15.View all service files
+
+  command : systemctl list-unit-files --type=service
+
+-->Display the all installed services
+
+16.Show the system boot time
+
+ command : systemd-analyze
+
+ -->Show the system startup time
+
+17.Show the slow startup service
+
+ command : systemd-analyze blame
+
+ -->Displays services that take the most time during boot
+
+18.Reload systemd confuriguation
+
+ command : systemctl daemon-reload
+
+ -->Reloads systemd manager configuration after creating/modifying service files.
  
-
-
-
-
-
