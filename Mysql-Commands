@@ -52,25 +52,42 @@ Command 11:SELECT * FROM table_name WHERE condition;
 
  Example: SELECT * FROM students WHERE id=1001;
 
-->Used to filtering the data
+->Use to filtering the data
 
-Command 12:UPDATE table_name SET column_name=value WHERE condition;
+command 12: SELECT * FROM table_name ORDER BY coloumn_name DESC;
 
-->Ued to update the existing table
+  Example : SELECT * FROM employees ORDER BY emp_salary DESC;
+
+-->use to sort the salary highest to lowest
+
+command 13: SELECT COUNT(*) FROM table_name;
+ 
+ Example : SELECT COUNT(*) FROM employees;
+
+-->use to count the total number of rows in the table 
+
+command 14: SELECT MIN(column_name) FROM tabe_name;
+
+ Example : SELECT MIN(emp_salary) FROM employees;
+
+-->use to get the minimum value in the table
+
+command 15:SELECT MAX(column_name) FROM table_name;
+
+-->use to get maximum value in the table
+
+command 16:SELECT AVG(column_name) FROM table_name;
+
+-->use to get the average value in the table 
+
+Command 13:UPDATE table_name SET column_name=value WHERE condition;
+
+->Use to update the existing table
 
  Example: UPDATE students SET name='jagan' WHERE id=1001;
 
-Command 13:DELETE FROM table_name WHERE condition;
+Command 14:DELETE FROM table_name WHERE condition;
 
- ->Used to deleting the duplicate & particular data
+ ->Use to deleting the duplicate & particular data
 
  Example:DELETE FROM students WHERE id=1002;
-
-
-
-
-
-
-
-
-
