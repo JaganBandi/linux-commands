@@ -42,7 +42,7 @@ Command 9: a.INSERT INTO table_name
            b.INSERT INTO table_name
             VALUES(value1,value2),(value1,value2);
 ->Insert the multiple values
- here,strings are use single qutoes,number do not use quotes            
+ here,strings are use single qutoes,numbers do not use quotes            
 
 Command 10:SELECT * FROM table_name;
  
@@ -80,14 +80,33 @@ command 16:SELECT AVG(column_name) FROM table_name;
 
 -->use to get the average value in the table 
 
-Command 13:UPDATE table_name SET column_name=value WHERE condition;
+command 17:SELECT * FROM table_name WHERE coloumn_name LIKE 'letter%';
+
+ Example :SELECT * FROM employees WHERE emp_name LIKE'j%';
+
+-->use to search for names ,filter j letter above command show the table whos name start with letter j.
+
+command 18 : SELECT column_name, column_name FROM table_name;
+
+Example : SELECT emp_name, emp_salary FROM employees;
+
+-->use to display the specific columns in the table.
+
+Command 19:UPDATE table_name SET column_name=value WHERE condition;
 
 ->Use to update the existing table
 
  Example: UPDATE students SET name='jagan' WHERE id=1001;
 
-Command 14:DELETE FROM table_name WHERE condition;
+Command 20:DELETE FROM table_name WHERE condition;
 
  ->Use to deleting the duplicate & particular data
 
  Example:DELETE FROM students WHERE id=1002;
+
+
+command 21:ALTER TABLE table_name ADD coloumn_name;
+
+Example: ALTER TABLE employees ADD emp_age INT;
+
+-->use add the column in the table.
