@@ -60,6 +60,10 @@ command 12: SELECT * FROM table_name ORDER BY coloumn_name DESC;
 
 -->use to sort the salary highest to lowest
 
+->command : SELECT * FROM employees ORDER BY emp_salary ASC;
+
+-->use tp sort the salary accending order
+
 command 13: SELECT COUNT(*) FROM table_name;
  
  Example : SELECT COUNT(*) FROM employees;
@@ -67,7 +71,7 @@ command 13: SELECT COUNT(*) FROM table_name;
 -->use to count the total number of rows in the table 
 
 command 14: SELECT MIN(column_name) FROM tabe_name;
-
+  
  Example : SELECT MIN(emp_salary) FROM employees;
 
 -->use to get the minimum value in the table
@@ -98,15 +102,37 @@ Command 19:UPDATE table_name SET column_name=value WHERE condition;
 
  Example: UPDATE students SET name='jagan' WHERE id=1001;
 
-Command 20:DELETE FROM table_name WHERE condition;
 
- ->Use to deleting the duplicate & particular data
+command 20: UPDATE table_name SET column_name = NULL;
+
+-->use to removimg the incorrect values
+
+
+Command 21:DELETE FROM table_name WHERE condition;
+
+ ->Use to deleting the duplicate & particular data 
 
  Example:DELETE FROM students WHERE id=1002;
 
 
-command 21:ALTER TABLE table_name ADD coloumn_name;
+command 22:ALTER TABLE table_name ADD coloumn_name;
 
 Example: ALTER TABLE employees ADD emp_age INT;
 
 -->use add the column in the table.
+
+-->here , if you create a date 0f birth column then you use datatype is date
+
+ Example : ALTER TABLE employees ADD emp_DOB DATE;
+
+ command 23: ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+
+ -->use to change the datatype
+
+ Example : ALTER TABLE table_name MODIFY COLUMN emp_DOB DATE;
+
+ 
+
+
+
+
