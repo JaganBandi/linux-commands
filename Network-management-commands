@@ -110,7 +110,48 @@ check the DNS working
 17.shows the complete network configuration of connection 
   command : nmcli connection show ens160
 
-18.  
+18. Restart network manager
+ 
+  command : systemctl restart NetworkManager
+
+  -->fix temporory network issue
+  -->reload network confuriguation
+
+19.Check the Network Service Status
+
+  command : systemctl status NetworkManager
+
+  -->Check the service is running or not
+
+20.Bring Interface UP/DOWN
+
+ command : ip link set ens160 up
+           ip link set ens160 down
+
+
+ -->uses :troubleshooting
+         restarting interface
+
+21.Check the download connectivity using url
+
+  command : curl google.com
+
+  ->api testing
+  ->web trouble shooting
+
+22.Check the http headers
+
+ command : curl -I google.com
+
+-->shows the http status
+-->server details
+
+23.
+
+
+
+
+
 
 
 
