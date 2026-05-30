@@ -18,11 +18,39 @@ Process management commands
 
   command : top
 
+  >identify the zombie files
+
+  command : ps -ef | grep z
+
+  >identify the orphan 
+
+   command : ps -ef | grep <ppid>
+
 3.Runs a process for 100 seconds
 
   command : sleep 100
   
-  stop&pause the job: Ctrl+z
+  exit :Ctrl+z
+
+  sleep command is used to pause execuation for a specified amount of time
+
+  example : sleep 5
+   the terminal freeze for 5 seconds and then it return automatically
+
+   >in shell scipt
+
+   create a file : vi backup.sh
+   #!/bin/bash
+   echo "starting backup ...."
+   sleep 10
+   echo "backup completed"
+
+   give the permissions: chmod +x backup.sh
+   
+   run script : ./backup.sh
+
+   the terminator is freeze 10 seconds and then it return automatically  
+  
 
 4.Show your stopped process
 
@@ -52,6 +80,38 @@ Process management commands
  example : kill -9 1732
 
 
-9. 
+9.kill the process using process name instead of id
+
+ command : pkill
+
+ example : pkill sleep
+
+10.Change priority of a running process command
+
+ command : renice
+
+ example : renice 10 -p 63590
+
+  here : renice is used to change priority of running process
+
+         10 --> new priority value
+
+         -p --> process id
+
+         0 is the normal priority , 10 is the lower priority, 19 is the very low priority.
+
+11. View manage running process in real time 
+
+ command : htop 
+
+ if command is not found install epel --> extra package for enterprice linux
+
+ Used to monitor:
+
+-->CPU usage
+-->Memory usage
+-->Running processes
+-->Process priority
+-->Kill processes
     
 
