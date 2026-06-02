@@ -131,8 +131,141 @@ Example: ALTER TABLE employees ADD emp_age INT;
 
  Example : ALTER TABLE table_name MODIFY COLUMN emp_DOB DATE;
 
- 
+command 24: ALTER TABLE table_name DROP COLUMN column_name;
+
+-->Use to delete a column in the table
+
+Example : ALTER TABLE employees DROP COLUMN emp_age;
+
+command 25: SELECT * FROM employees LIMIT number;
+
+-->Use to showing only few records in the table
+
+Example : SELECT * FROM employees LIMIT 3;
+
+command 26: SELECT DISTINCT column_name FROM table_name;
+
+--> use to unique values in the table
+
+Example : SELECT DISTINCT emp_department FROM employees;
+
+command 27 : SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name;
+
+-->Use for groups column wise
+
+Example : SELECT emp_department, COUNT(*) FROM employees GROUP BY emp_department;
+
+command 28 : SELECT SUM(column_name) FROM table_name;
+
+--> Use to add the numerical values in the table
+
+Example : SELECT SUM(emp_salary) FROM employees;
+
+command 29:SELECT * FROM table_name WHERE column_name BETWEEN value1 AND value2;
+
+-->Use to filter the values range the table
+
+Example : SELECT * FROM employees WHERE emp_salary BETWEEN 20000 AND 50000;
+
+************************************************************************************
+OPERATORS
+************************************************************************************
+operators : SQL operators are reserved words or symbols used to filter, manipulate, calculate, and compare data within a database query
+
+
+1. AND
+
+ --> ALL CONDITION TRUE
+
+  Syntax : SELECT * FROM table_name WHERE column_name = value AND column_name = value;
+
+ Example: SELECT * FROM employees WHERE emp_id = 101 AND emp_name = 'Jagan';
+
+
+2. OR 
+
+-->Atleast one condition is true
+
+ Syntax : SELECT * FROM table_name WHERE column_name = value OR column_name = value;
+
+ Example : SELECT * FROM employees WHERE emp_name = 'Jagan' OR emp_name = 'Raju';
+
+
+3.IN 
+
+--> Matches any value in the list
+
+Syntax : SELECT * FROM table_name WHERE condition IN (VALUES);
+
+Example : SELECT * FROM employees WHERE emp_name IN ('JAGAN', 'RAJU', 'SOMU');
+
+
+4.NOT IN
+
+--> Excludes value from a list
+
+Syntax : SELECT * FROM table_name WHERE column_name NOT IN value;
+
+Example : SELECT * FROM worker WHERE name NOT IN ('Ramu');
+
+
+5. BETWEEN 
+
+--> filter values within a range
+
+Syntax : SELECT * FROM table_name WHERE CONDITION;
+
+Example : SELECT * FROM employees WHERE emp_id BETWEEN 101 AND 104;
+
+*************************************************************************  
+CONSTRAINTS
+*************************************************************************
+Constraints are rules applied to table columns to ensure data accuracy and integrity.
+
+1. PRIMARY KEY
+
+  --> Unique values only no null values and easy to identify the each row
+
+  Example :  CREATE TABLE students(
+              id INT PRIMARY KEY,
+              name VARCHAR(50)
+              );
+
+2.NOT NULL
+
+ --> Value is mandatory Cannot insert NULL
+
+Example : CREATE TABLE employees(
+           emp_id INT,
+           emp_name VARCHAR(50) NOT NULL
+          );
+
+3. UNIQUE 
+
+-->Prevents duplicate values Commonly used for email, phone number, username
+
+Example : CREATE TABLE employees(
+        id INT,
+        email VARCHAR(100) UNIQUE
+         );
+
+4. DEFAULT
+
+-->Automatically inserts a value if none is provided
+
+Example : CREATE TABLE employees(
+           emp_id INT,
+           city VARCHAR(50) DEFAULT 'BANGLORE'
+            );
+
+5. UNIQUE + NOT NULL
+
+--> Values must be provided Values cannot be duplicated
+
+Example :  CREATE TABLE employees(
+           emp_mail VARCHAR(100) UNIQUE NOT NULL
+            );
 
 
 
-
+            
