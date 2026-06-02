@@ -93,11 +93,11 @@ the main command used in systemd is
 
 14.View the current running services
 
-  command : systemctl list-unit --type=service
+  command : systemctl list-units --type=service
 
 -->Display the current running services
 
-15.View all service files
+15.View all installed service files
 
   command : systemctl list-unit-files --type=service
 
@@ -120,4 +120,10 @@ the main command used in systemd is
  command : systemctl daemon-reload
 
  -->Reloads systemd manager configuration after creating/modifying service files.
+
+19.Check the dependices chain
+
+ command : systemd-analyze critical chain
+
+--> shows which service delay the boot process 
  

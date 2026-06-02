@@ -126,7 +126,7 @@ then enter into the job
   command :at -c
 
 >view the specific job
-  command :at -c job-id
+  command :at -c job-id       
 example :at -c 5
 >to delete the job 
   command :atrm

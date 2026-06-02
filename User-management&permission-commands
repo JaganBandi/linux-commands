@@ -84,7 +84,7 @@ c.usermod
 
   example : usermod -U jagan
 
-   >Apply the command to check user user accout is unlock
+   >Apply the command to check user user account is unlock
   command : passwd -S jagan
 *******************************************************
 d.chage
