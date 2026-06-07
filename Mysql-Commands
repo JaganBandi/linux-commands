@@ -267,5 +267,31 @@ Example :  CREATE TABLE employees(
             );
 
 
+************************************************************************************************
+JOINS
+************************************************************************************************
+JOINS : joins are used to combain the data from two or more tables by using column names
 
-            
+1. INNER JOIN: returns only matching rows from both tables
+ 
+  Syntax  : SELECT columns FROM table 1 INNER JOIN table 2 ON table1.column = table2.column;
+
+  Example : SELECT w.id, w.name, d.dept_name FROM workers w INNER JOIN department d ON w.dept_id = d.dept_id;
+
+Filter the Condition :
+ 
+    SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column WHERE d.dept_name = 'dept-name';
+
+2. LEFT JOIN : Returns all records from the left table and matching records from the right table. Non-matching rows show NULL.
+
+  Syntax : SELECT coloumns FROM table 1 LEFT JOIN table 2 ON table1.column = table2.column;
+   
+  Example : SELECT w.id, w.name, d.dept_name FROM workers w LEFT JOIN department d ON W.dept_id = d.dept_id;
+
+
+3. RIGHT JOIN :   
+
+
+
+
+
