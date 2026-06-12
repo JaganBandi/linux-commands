@@ -1,0 +1,49 @@
+Terraform commands :
+*****************************
+1. Check the version
+
+ command : terraform version
+
+2.Intilaizing the terraform working directory and downloads the required plugins
+
+ command : terraform init
+
+3.Checks whether the Terraform configuration files are syntactically correct.
+
+ command : terraform validate
+
+4.Formate terraform confuguration files
+
+ command : terraform fmt
+
+5.Shows the executaion plan before creating and modifying resources
+
+ command : terraform plan
+
+6.Creates or updates infrastructure based on Terraform configuration
+ 
+ command : terraform apply
+
+7.Display the current stage of managed infastructure
+
+ command : terraform show
+
+8.Display the output vlaues defined terraform confuriguation
+
+ command : terraform output
+
+9.List all resources managed by terraform 
+
+ command : terraform state list
+
+10.Delete all resources managed by terraform
+
+ command :terraform destory
+
+11.List all avaliable workspaces
+
+ command : terraform workspace list
+
+12.Create a new workspace
+
+ command : terraform workspace new <workspace-name>
