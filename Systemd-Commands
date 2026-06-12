@@ -103,16 +103,42 @@ the main command used in systemd is
 
 -->Display the all installed services
 
+state               meaning
+-----               -------
+1. enabled         Starts automaticall at boot
+
+2.disabled         Does not start automatically at boot
+
+3.static           Cannot be enabled/disabled ,started as a dependency
+
+4.alias            Alternative name for another service
+
+5.masked           completely blocked from starting 
+
+
 16.Show the system boot time
 
  command : systemd-analyze
 
  -->Show the system startup time
 
+ -kernal---> Time taken by the Linux Kernal to boot
+
+ -userspaces---> Time taken by service and application to start
+
+ -total time ---> Complete system startup time
+
+ uses :
+ 1. find slow boot problems
+
+ 2. Measure startup performance
+
+ 3. Optimize system boot time
+
 17.Show the slow startup service
 
  command : systemd-analyze blame
-
+  
  -->Displays services that take the most time during boot
 
 18.Reload systemd confuriguation
