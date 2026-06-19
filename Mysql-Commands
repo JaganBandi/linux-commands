@@ -386,7 +386,141 @@ if you update the parent id and it s automatically update the child id
  
  UPDATE department SET dept_id = 201 WHERE dept_id = 101;
 
+********************************************************************************************
+VIEWS
+********************************************************************************************
+A View is a virtual table created from the result of a SQL query. It stores the query definition and presents data from one or more underlying tables.
+
+Command : check all view in our databases 
+
+SHOW FULL TABLES WHERE table_type = 'VIEW';
+
+-> SHOW FULL TABLES;  [Check views exits]
+
+-> SELECT DATABASES (); [check current databases]
+  
+Practice :
+
+---> Check your table:
+  
+  SELECT * FROM students;
+
+---> Create a view:
+
+  CREATE VIEW student_view AS SELECT id, name FROM students;
+
+---> Display the view :
+
+  SELECT * FROM students_view;
+
+
+USING WHERE CALUSE :
+
+To show only a filtered subset of data without writing the same WHERE condition every time.
+
+practice:
+
+---> Create a view :
+
+ CREATE VIEW BCA_students AS SELECT id, name, dept_id FROM students WHERE dept_id = 201;
+
+---> Check the table:
+
+SELECT * FROM BCA_students;
+
+**************************************************************************************
+USING VIEW JOIN :
+A View can be created using JOIN to combine data from two or more tables into a single virtual table. This helps simplify complex queries and provides users with related information in one place.
+
+practice:
+
+---> Create a View :
  
+  CREATE VIEW students_department_view AS s.id, s.name, d.dept_name FROM students s INNER JOIN department d WHERE s.dept_id = d.dept_id;
+
+---> Display the view:
+
+ SELECT * FROM students_department_view;
+
+
+REPLACE VIEW :
+CREATE OR REPLACE VIEW is used to create a new view or replace the definition of an existing view without manually dropping it first.
+
+practice :
+
+---> Create a view :
+
+CREATE OR REPLACE VIEW students_view AS SELECT id, name, dept_id FROM students;
+
+---> Display view :
+
+SELECT * FROM studets_view;
+
+DROP VIEW :
+DROP VIEW permanently removes a view from the database. It deletes only the view definition and does not delete the underlying table or its data.
+
+command :
+
+DROP VIEW view-name;
+
+Example :
+
+DROP VIEW BCA_students;
+
+***********************************************************************************************************
+AGGREGATE FUNCTION
+***************************************************************************************************
+1.COUNT() : COUNT() is an aggregate function used to count the number of rows in a table.
+
+  Command : SELECT COUNT(*) FROM table_name;
+
+  Example : SELECT COUNT(*) FROM customers;
+
+2.SUM() : SUM() is an aggregate function used to calculate the total of all numeric values in a column.
+
+  Command : SELECT SUM(column_name) FROM table_name;
+
+  Example : SELECT SUM(price) FROM products;
+
+
+3.AVG() : AVG() is an aggregate function used to calculate the average value of a numeric column.
+
+
+  Command : SELECT AVG(column_name) FROM table_name;
+
+  Example : SELECT AVG(price) FROM products;
+
+
+4.MAX() : MAX() is an aggregate function used to find the highest value in a column.
+
+  Command : SELECT MAX(column_name) FROM table_name;
+
+  Example : SELECT MAX(price) FROM products;
+
+5.MIN() : MIN() is an aggregate function used to find the lowest value in a column.
+
+  Command : SELECT MIN(column_name) FROM table_name;
+
+  Example : SELECT MIN(price) FROM products;
+
+********************************************************************************************************
+GROUP BY & HAVING BY clause
+
+********************************************************************************************************
+GROUP BY : GROUP BY is used to group rows having the same value in a column and perform aggregate functions
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
