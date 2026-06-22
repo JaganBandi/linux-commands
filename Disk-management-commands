@@ -1,0 +1,23 @@
+DISK MANAGEMENT COMMANDS
+**********************************************************
+1. Check the disk usage :
+
+Shows the filesystem usage and avaliable spaces
+
+ Command : df -h
+
+
+2. Check the Directory Size
+
+ Shows the total Directory size
+
+ Command : df -sh
+
+ Example : df -sh /var/log
+
+
+3.View BLock Devices
+
+ List all disk and paritions
+
+  Command : lsblk
