@@ -10,6 +10,22 @@ Network management commands
 
   command : ip route
 
+--> Show detailed route
+
+  command : ip route show
+
+--> Add temporary route
+
+ command : ip route add 
+
+ example : ip route add 10.10.10.0/24 via 192.168.106.2
+
+--> Delete temporary route 
+
+ command : ip route del
+
+example : ip route del 10.10.10.0/24
+ 
 3.check the gateway connectivity
   command : ping -c 4 route-ip
 
@@ -146,8 +162,30 @@ check the DNS working
 -->shows the http status
 -->server details
 
-23.
+23.Shows the ipv4 address
 
+ command : ip -4 addr
+
+ ->Internet protocol version 4
+ ->address length 32 bits
+ ->address formate "Decimal Numbers"
+
+24. Shows the ipv6 address
+
+ command : ip -6 addr
+
+ -> Internet protocol version 6
+ -> address length 128bits
+ ->address formate "HexaDecimal Numbers"
+
+25. Check ipv4 route
+
+ command : ip -4 route
+
+26. check ipv6 route 
+  
+  command : ip -6 route
+  
 
 
 
