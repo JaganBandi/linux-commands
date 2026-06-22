@@ -87,7 +87,7 @@ the main command used in systemd is
  ->used after reboot check
 
  .startup services
- .boot eroors
+ .boot erros
  .kernal message
  .failed componentes
 
