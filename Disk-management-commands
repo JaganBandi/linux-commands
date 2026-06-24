@@ -21,3 +21,9 @@ Shows the filesystem usage and avaliable spaces
  List all disk and paritions
 
   Command : lsblk
+
+4.Display Partition Information
+
+ Displays detailed information about all disks and their partitions.
+
+  Command : fdisk -l 
