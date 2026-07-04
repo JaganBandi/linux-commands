@@ -97,6 +97,20 @@ check the DNS working
   command :ip -s link
   shows the network interface stastics
 
+  --> View only interface name 
+
+   command : ip link
+
+  --> Show Stastics fo Specific interface
+
+   command : ip -s link show ens160
+
+  --> Continuesly Monitor the network stastics
+
+   command : watch -n 2 ip -s link 
+
+   This refreshes every 2 seconds, making it useful for observing traffic during file transfers or application testing.
+
 12.Check the MAC address
   command : ip neigh
   shows ARP table(table which maps ip address and MAC address for local network communication )
