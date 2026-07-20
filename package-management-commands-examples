@@ -1,0 +1,259 @@
+PACKAGE MANAGEMENT COMMANDS
+**********************************************
+1. For installing the package
+
+   Command : yum install package -y
+
+# Example:
+
+yum install git -y
+
+2. For removing the package
+
+Command: yum remove package -y
+
+# Example:
+
+yum remove httpd -y
+
+3. For update the package
+
+Command : yum update -y
+
+# Example:
+
+yum update -y
+
+4.For search the package
+
+Command : yum search package
+
+# Example:
+
+yum search nginx
+
+5. For information about the package
+
+Command : yum info package
+
+# Example:
+
+yum info docker
+
+6. To check installed packages
+
+Command : yum list installed
+
+# Example:
+
+yum list installed
+
+7.To check updates
+
+Command : yum check-update
+
+# Example:
+
+yum check-update
+
+8.To clear cache
+
+Command : yum clean all
+
+# Example:
+
+yum clean all
+
+9.To reinstall package
+
+Command :yum reinstall package -y
+
+# Example:
+
+yum reinstall git -y
+
+10.To list available packages
+
+Command : yum list available
+
+# Example:
+
+yum list available
+
+11.Show dependencies
+
+Command : yum deplist package
+
+# Example:
+
+yum deplist httpd
+
+12.Install specific version
+
+Command : yum install package-version
+
+# Example:
+
+yum install httpd-2.4.37 -y
+
+13.Transaction history
+
+ Command : yum history
+
+# Example:
+
+Command : yum history
+
+14.Undo transaction
+
+Command : yum history undo <id>
+
+# Example:
+
+yum history undo 5
+
+15.Redo transaction
+
+Command : yum history redo <id>
+
+# Example:
+
+yum history redo 5
+
+16.Transaction details
+
+Command : yum history info <id>
+
+# Example:
+
+yum history info 5
+
+
+*REPOSITORY MANAGEMENT
+***********************************
+
+17. List enabled repos
+
+Command : yum repolist
+
+# Example:
+
+yum repolist
+
+18.List all repos
+
+Command : yum repolist all
+
+# Example:
+
+yum repolist all
+
+19.Enable repo
+
+Command : yum config-manager --set-enabled repo-name
+
+# Example:
+
+yum config-manager --set-enabled AppStream
+
+20.Disable repo
+
+Command : yum config-manager --set-disabled repo-name
+
+# Example:
+
+yum config-manager --set-disabled AppStream
+
+21.Repo info
+
+Command : yum repoinfo
+
+# Example:
+
+yum repoinfo
+
+22.Disabled repos
+
+Command : yum repolist disabled
+
+# Example:
+
+yum repolist disabled
+
+23.Install from repo
+
+Command : yum install package --enablerepo=repo-name
+
+# Example:
+
+yum install nginx --enablerepo=epel -y
+
+24.Disable repo temporarily
+
+Command : yum install package --disablerepo=repo-name
+
+# Example:
+
+
+yum install nginx --disablerepo=epel
+
+
+
+GROUP MANAGEMENT COMMANDS
+*********************************************
+
+25.List groups
+
+Command : yum group list
+
+# Example:
+
+yum group list
+
+26.Installed groups
+
+Command : yum group list installed
+
+# Example:
+
+yum group list installed
+
+27.Available groups
+
+Command : yum group list available
+
+# Example:
+
+yum group list available
+
+28.Install group
+
+Command : yum groupinstall "Group Name" -y
+
+# Example:
+
+yum groupinstall "Development Tools" -y
+
+29.Remove group
+
+Command : yum groupremove "Group Name" -y
+
+# Example:
+
+yum groupremove "Development Tools" -y
+
+30.Group info
+
+Command : yum group info "group-name"
+
+# Example:
+
+yum group info "Development Tools"
+
+31.Update group
+
+Command : yum group update "group-name"
+
+# Example:
+
+yum group update "Development Tools"
