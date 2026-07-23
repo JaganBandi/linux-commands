@@ -26,4 +26,51 @@ Shows the filesystem usage and avaliable spaces
 
  Displays detailed information about all disks and their partitions.
 
-  Command : fdisk -l 
+  Command : fdisk -l
+
+5.Check mounted filesystems
+
+ Shows which disks are currently attached (mounted) to which directories
+
+ command : findmnt
+
+ findmnt : Displays all currently mounted filesystem in a tree structure
+
+ it shows : where the filesystem mounted (TARGET), which device it comes from (SOURCE), what filesystem type it uses(FSTYPE), mount option(OPTIONS)
+
+CPU AND MEMORY : 
+  
+   1.Dispaly all detailed information about cpu processor
+
+    command  :  cat /proc/cpuinfo
+
+    check the cpu count: shows the number of process units
+
+     command : nproc
+
+   2.Displays detailed memory (RAM) information. 
+
+    command  : cat /proc/meminfo
+
+
+6. Check Disk UUID 
+
+  check the UUID(Universal Unique Identifier) for every disk partion 
+
+  command : blkid
+
+
+  command : cat /etc/fstab 
+  usually see this UUID instead of the device name
+
+7.Mount a File system
+
+  Attaches a filesystem (disk partition) to a directory so that Linux and applications can access it.
+
+  command : mount <device_name> <mount_point>
+
+  Example : mount /dev/sdb1 /data
+
+  /dev/sdb1 = Device or partition to be mounted.
+  /data = Directory where the filesystem will be attached.
+
