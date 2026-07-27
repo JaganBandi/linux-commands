@@ -11,9 +11,9 @@ Shows the filesystem usage and avaliable spaces
 
  Shows the total Directory size
 
- Command : df -sh
+ Command : du -sh
 
- Example : df -sh /var/log
+ Example : du -sh /var/log
 
 
 3.View BLock Devices
@@ -22,11 +22,102 @@ Shows the filesystem usage and avaliable spaces
 
   Command : lsblk
 
-4.Display Partition Information
+4. View Physical Volume
+
+  Command : pvs
+
+  pvs shows the physical storage supplied to LVM.
+
+  PFree = 0 : It means all physical volume [Eg:19GB] has been allocated to logical volumes
+
+
+5. Create a physical Volume
+
+  Command : pvcreate /dev/nvme1n1p1
+
+  verify : pvs
+   
+
+5. View the Volume Groups
+
+  Command : vgs
+
+  vgs shows the storage pool formed from physical volumes
+
+  it displays :
+
+  -> Volume Group Name 
+  ->Number of Pysical Volumes
+  ->Number of Logical Volumes
+  ->Total Voulme Group Size
+  ->Free space available for creating or extending Logical Volumes
+
+  attr = wz--n : It means Volume Groups is writable and active
+
+  VFree = 0 : It means No free space remains in the Volume Group
+
+
+ 6. Show Logical Volumes
+ 
+  Command : lvs
+
+  lvs shows the usable logical disks created from the volume group.
+
+  it shows the logical volumes , volume groups and Size
+
+  if Attr = -wi-ao---- : 
+
+  w — Logical volume is writable.
+  i — Uses normal linear allocation.
+  a — Logical volume is active.
+  o — Logical volume is open and currently in use. 
+
+7. Check the Swap is active
+
+  Command : swapon --show
+
+  Eg : Swap :2:GB
+
+
+8. Disable Swap Temporarly
+
+ Command : swapoff -a
+
+ Verify : 
+
+ free -h (or) swapon --show
+
+
+9. Enable Swap Again
+
+  Command : swapon -a
+
+  or 
+
+  Command : swapon /dev/rl/swap 
+
+
+10.Display Partition Information
 
  Displays detailed information about all disks and their partitions.
 
   Command : fdisk -l
+
+11.Enter the fdisk Interactive mode
+
+  command : fdisk /dev/nvme0n1
+
+  types :
+
+   p : Command prints the current partition table
+
+   n : Create New partition
+
+   d : Delete an existing partitions
+
+   l : List partition types
+
+   w : save changes
 
 5.Check mounted filesystems
 
@@ -73,4 +164,6 @@ CPU AND MEMORY :
 
   /dev/sdb1 = Device or partition to be mounted.
   /data = Directory where the filesystem will be attached.
+
+
 
