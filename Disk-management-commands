@@ -22,6 +22,10 @@ Shows the filesystem usage and avaliable spaces
 
   Command : lsblk
 
+  Command : lsblk -f 
+
+  -f is shows the additional shows the filesystem information 
+
 4. View Physical Volume
 
   Command : pvs
@@ -119,7 +123,56 @@ Shows the filesystem usage and avaliable spaces
 
    w : save changes
 
-5.Check mounted filesystems
+   F : this command is display the free unpartitioned space on the disk
+
+12. Make File System
+
+  A partition by itself is just allocated storage. To store normal files and directories on it, we create a filesystem.
+
+ Disk
+  ↓
+Partition
+  ↓
+Filesystem
+  ↓
+Mount Point
+  ↓
+Files & Directories
+
+ Example : mkfs.xfs /dev/nvme0n1p3
+
+13. Attaches a filesystem to a directory
+
+  command : mount
+
+  The mount command attaches a filesystem to a directory so that its storage can be accessed through that directory.
+
+   Example : mount /dev/nvme0n1p3 /data
+              |          |           |  
+            command    filesystem  mount-point
+
+
+12. Identify block devices
+
+   command : blkid 
+     
+    blkid displays information about block devices, especially the UUID and filesystem type.
+
+    UUID -> Unique Identifier of the file system
+
+    TYPE -> FileSystem type (xfs)
+
+    PARTUUID -> Unique Identifier of the Partiton
+
+
+13. Detach a filesystem
+
+   command : umount
+
+   Example : umount /dev/nvme0n1p3
+
+
+14.Check mounted filesystems
 
  Shows which disks are currently attached (mounted) to which directories
 
@@ -129,8 +182,13 @@ Shows the filesystem usage and avaliable spaces
 
  it shows : where the filesystem mounted (TARGET), which device it comes from (SOURCE), what filesystem type it uses(FSTYPE), mount option(OPTIONS)
 
-CPU AND MEMORY : 
-  
+  TARGET  → /data
+  SOURCE  → /dev/nvme0n1p3
+  FSTYPE  → xfs
+  OPTIONS → rw...
+
+15. CPU AND MEMORY : 
+   ======================  
    1.Dispaly all detailed information about cpu processor
 
     command  :  cat /proc/cpuinfo
@@ -144,26 +202,10 @@ CPU AND MEMORY :
     command  : cat /proc/meminfo
 
 
-6. Check Disk UUID 
+16. Check After changing the disk partiton table :
 
-  check the UUID(Universal Unique Identifier) for every disk partion 
+   Command : partprob
 
-  command : blkid
-
-
-  command : cat /etc/fstab 
-  usually see this UUID instead of the device name
-
-7.Mount a File system
-
-  Attaches a filesystem (disk partition) to a directory so that Linux and applications can access it.
-
-  command : mount <device_name> <mount_point>
-
-  Example : mount /dev/sdb1 /data
-
-  /dev/sdb1 = Device or partition to be mounted.
-  /data = Directory where the filesystem will be attached.
-
+   partprobe tells the Linux kernel to re-read the partition table after you create, delete, or modify partitions.
 
 
