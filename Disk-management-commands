@@ -208,4 +208,9 @@ Files & Directories
 
    partprobe tells the Linux kernel to re-read the partition table after you create, delete, or modify partitions.
 
+   Refresh the kernel's partition information.
+   Detect newly created or modified partitions.
+   Avoid rebooting after partition changes
 
+  syntax : partprobe /dev/nvme0n1
+  
