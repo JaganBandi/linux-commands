@@ -1,0 +1,139 @@
+FILE MANAGEMENT COMMANDS :
+========================================
+
+1.list all files and directories
+
+a.long list shows detailed information directories , owner, size
+
+command 1 : ll 
+
+b.short list shows only files 
+
+command 2 : ls (one line)
+
+c.This command same as ll
+
+command 3 : ls -l 
+
+d.Shows the hidden file
+
+command : ls -la or ll -a
+
+here : 
+
+l = long list
+a = all files including hidden files
+
+e. Shows hidden file in short list
+
+command : ls -a
+
+f.Show all files in human readable formate
+
+command : ls -lh
+
+g.Sort modification time newest first
+
+command : ls -lt
+
+h. Shows the modification files oldest to newest
+
+command : ls -ltr
+
+i. Shows inode number
+
+command : ls -i
+
+j.Shows long list with inode number
+
+command : ls -li
+
+k.shows directory itself instead of listing it contents
+
+command : ls -ld 
+
+example : ls -ld /opt
+
+l.List files and subdirectories
+
+ command : ls -R
+
+ It will enter directories and show their contents too.
+
+m.Sort files size Decending order [largest first]
+
+ command : ls -S
+
+n.Sort file size Acending order[smallest first]
+
+ command : ls -Sr
+
+o.Sort files by extension
+
+ command : ls -X or ls -lX
+
+p. Add symbols by files and directories
+
+ command : ls -F
+
+ / -> directories
+
+ * -> files
+
+ @ -> link
+
+2.Shows Present Working Directory 
+
+ command : pwd
+
+3.Change Directory
+
+ commad : cd 
+
+ example : cd /opt
+
+4.Move to back directory 
+
+ command : cd ..
+
+5. Move to home directory
+
+  command : cd ~
+
+6.Move to previous direcotory
+
+ command : cd -
+
+7.Stay in current direcotory
+
+ command : cd .
+
+Create Files and Directories
+============================
+8. Create empty file
+
+ command : touch
+
+ example : touch docker
+
+ example : Create multiple files
+
+ touch file1 file2 file3
+
+9.Create a Directory
+
+ command : mkdir
+
+ example : mkdir project
+
+ example : create multiple directories
+
+ mkdir dir1 dir2 dir3
+
+10.Create parent and child directories together
+
+ command : mkdir -p
+
+ example : mkdir -p devops/docker/project
+
+ 
