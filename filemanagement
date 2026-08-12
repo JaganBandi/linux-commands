@@ -96,7 +96,7 @@ p. Add symbols by files and directories
 
  command : cd ..
 
-5. Move to home directory
+5. Move to home(root) directory
 
   command : cd ~
 
@@ -120,6 +120,16 @@ Create Files and Directories
 
  touch file1 file2 file3
 
+ to create the files inside the directories
+
+ syntax: touch /directory/file-name
+
+ example: touch /opt/devops/file1.txt
+
+ to create multiple files inside the directory use curly brackets {}
+
+ touch /opt/devops/{file1,file2,file3}
+ 
 9.Create a Directory
 
  command : mkdir
@@ -136,4 +146,50 @@ Create Files and Directories
 
  example : mkdir -p devops/docker/project
 
- 
+==============================================
+copy : cp is used to cpoy the files or directories from one location to another location
+
+1. cp
+
+syntax :
+
+cp source destination
+
+example : cp file1.txt /opt/project
+
+2. Copy directories : cp -r is used to copy a directory along with all files and subdirectories inside it.
+--> it can create destination directory automatically
+
+command : cp -r
+
+-r = recursivly -> it copies the complete directory sturucture and every thing inside it 
+
+syntax : cp -r source_directory destination
+
+example : cp -r /opt/devops /opt/devops-backup
+
+3. cp -p : cp -p is used to copy a file while preserving its original attributes such as permissions, ownership where allowed, and timestamps.
+
+syntax : cp -p source_file destination_file
+
+example : cp -p /opt/file2.txt /root/file2-preserved.txt
+
+4. cp -i : is used when you want Linux to ask for confirmation before overwriting an existing destination file.
+
+syntax : cp -i source_file destination_directory/
+
+example : cp -i file.txt file2.txt
+
+5.cp -v : -v means verbose. It shows you what source file is being copied and where it is going.
+
+example : 
+
+[root@localhost opt]# cp -v freestyle /opt/linklab/
+'freestyle' -> '/opt/linklab/freestyle'
+
+we can use for copy subdirectory and file using -r
+
+command : cp -rv
+
+example : cp -rv /opt/devops /opt/devops-copy
+
