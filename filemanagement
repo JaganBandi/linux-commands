@@ -192,4 +192,95 @@ we can use for copy subdirectory and file using -r
 command : cp -rv
 
 example : cp -rv /opt/devops /opt/devops-copy
+=====================================================================
+1. MOVE(mv) : mv is used to move a file and directories from one location to another location
+
+    syntax : mv source destination
+
+    example : mv file1.txt /opt/project
+
+2. RENAME THE FILE ALSO USING MV COMMAND :
+
+    syntax : mv old_name new_name
+
+    example : mv project devops-project
+
+3.  MOVE AND RENAME THE FILE AT SAME TIME :
+
+    syntax : mv source_file destination_path/new_name
+
+    example : mv file1.txt /opt/project/main.txt
+
+4. mv -i : moves or renames a file interactively and asks before overwriting an existing destination file
+
+  syntax : mv -i source destination
+
+  mv -i file1.txt file2.txt
+
+  ask confirmation (y/n)
+  y = overwritten
+  n = file2.txt keep it unchanged
+
+5. mv -v : verbose move it shows what file or directory is being moved or renamed
+
+  syntax : mv -v source destination
+
+  example : mv -v pipeline /opt/practice/
+
+  renamed 'pipeline' -> '/opt/practice/pipeline'
+
+6. mv -f : -f = forcefully moves or renames a file and forcefully overwrites the destination without asking for confirmation
+
+   mv -f source destination
+
+  mv -f file1.txt file2.txt
+====================================================================================
+1. rm --> remove/delete files
+
+  syntax : rm filename
+
+  example : rm docker.sh
+
+2. rm -i :Ask before deleting
+
+   command & example : rm -i container
+
+3. rm -f : forcefully deleted witout asking
+
+   command & example : rm -rf docker.sh
+
+=====================================================================================
+
+1. rmdir : REMOVE EMPTY DIRECTORY
+
+    syntax : rmdir directory_name
+
+    example : rmdir system
+
+2. rm -r :Remve Directory Recursivly
+
+   rm -r used to remove a directory along with files and subdirectories
+
+   syntax : rm -r directory_name
+
+   example : rm -r /opt/practice
+
+   also using * for remove everything inside
+
+   rm -r /opt/practice/*
+
+3. rm -rf : Force Remove Directory Recursivly
+
+   syntax : rm -rf directory_name
+
+   example : rm -rf /opt/practice
+
+   Purpose: Removes the complete directory, including all files and subdirectories, forcefully.
+
+
+
+
+
+
+
 
