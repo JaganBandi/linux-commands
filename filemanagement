@@ -277,7 +277,134 @@ example : cp -rv /opt/devops /opt/devops-copy
 
    Purpose: Removes the complete directory, including all files and subdirectories, forcefully.
 
+4. rm -v : rm -v is used to delete a file and display the name of file being used
 
+  
+  Syntax: rm -rv filename
+
+  Example : rm -rv SELinux-demo.html
+ 
+   removed 'SELinux-demo.html'
+
+=======================================================================================
+cat VIEW THE FILE AND WORK WITH FILE CONTENT
+
+>cat is used to display, combine and create a file content in linux
+
+1. View the file Content 
+
+   syntax : cat filename
+
+   Example : cat index.html
+
+
+2.Show line numbers
+
+  syntax : cat -n filename
+
+  Example : cat -n demo.txt
+
+3. View the Multiple Files Contents One After Other
+
+  syntax : cat file1 file2
+
+  Example : cat configure.txt file2.txt
+
+4.Create a file using cat
+ 
+  syntax : cat > filename
+
+  Example : cat > devops.txt
+
+  if file already exist this command will overwrite the exist content
+
+  press Ctrl + D for save and exit
+
+5. Add new content to the end of the existing file using cat, without deleting the old content
+
+  syntax : cat >> filename
+
+  Example : cat >> devops.txt
+
+  press Ctrl + D for save and exit
+
+6. Combine the multiple file contents into one new file
+
+  syntax : cat file1 file2 > output.txt
+
+  Example : cat devops.txt SELinux-demo.html > combinefile.txt
+
+============================================================================================
+1. head --> view the begining of the file
+
+> head is used to display the first lines of files
+
+syntax : head filename
+
+Example : head jenkins.sh
+
+by default it display the first 10 lines
+
+> Specific number of lines
+
+  command : head -n filename
+
+  example : head -n 5 jenkins.sh
+              (or)
+            head 5 jenkins.sh
+
+2. tail -> View the End of the line
+
+ > tail is used to display the last 10 lines of the files
+
+ Syntax : tail filename
+
+ Example : tail jenkins.sh
+
+ > To shown Specific Number of Lines
+
+  command :  tail -n filename
+
+  Example : tail -n 10 jenkins.sh (or) tail 10 jenkins.sh
+
+3. less -> View Large Files Page By Page
+
+   less is used to view the file content one screen at time , displays the file content page by page and allows scrolling and searching
+
+   Syntax : less filename
+
+   Example : less /var/logs/messages
+
+   space -> Next Page
+
+   b     -> pervious page
+
+   upward/downward -> move a line by line
+
+   /word -> Search for a word
+
+   n -> next search result
+
+   q -> quit
+
+4. more ->view the file content page by page
+
+   more is used to display file content one screen at a time
+
+   Syntax : more filename
+
+   Example : more /var/log/messages
+
+   space -> next page
+
+   enter -> next line
+
+   q     -> quit
+   
+
+
+
+  
 
 
 
