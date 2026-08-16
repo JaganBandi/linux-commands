@@ -1,48 +1,66 @@
 FIREWALL MANAGEMENT COMMANDS
 **********************************
 1.Check the firewall state
+ 
  command : firewall-cmd --state
 
 2.View the current firewall rules
+ 
  command : firewall-cmd --list-all
 
 3.Show the configure port numbers
+ 
  command : firewall-cmd --list-ports
 
 4.Firewall host configuration to allow the port number 
+ 
  command : firewall-cmd --permanent --add-port=(port number)/tcp
 
- example : firewall-cmd --permanent --add-port=8080/tcp
+ Example : firewall-cmd --permanent --add-port=8080/tcp
 
 5.Make the port number active
+ 
  command : firewall-cmd --reload
 
 6.Check the allowed services in the current zone
+ 
  command : firewall-cmd --list-services
  
 7.Add the services
-  command : firewall-cmd --permanent --add-service=http
-        firewall-cmd --reload                       |
-                                                 example  
+ 
+  command : firewall-cmd --permanent --add-service=(service-name) 
+
+  Example : firewall-cmd --permanent --add-service=http
+            firewall-cmd --reload             
+                                            
  > check the if the service is add :firewall-cmd --list-services
                                                    
 8.Remove the added services temporarly (after reboot came back again)
-   command : firewall-cmd --remove-service=http
-       firewall-cmd --reload <-----------> applied the saved configs
+   
+   command : firewall-cmd --remove-service=(service-name)
+
+   Example : firewall-cmd --remove-service=http
+       
 
 9.Remove the added service permanently 
-  command : firewall-cmd --permanent --remove-sevices=http
-    firewall-cmd --reload
+  
+  command : firewall-cmd --permanent --remove-service=(service-name)
+
+  Example : firewall-cmd --permanent --remove-sevices=http
+             firewall-cmd --reload
 
 10.Remove the added port numbers
-   command : firewall-cmd --remove-port=8080/tcp
-     firewall-cmd --reload               |
-                                       example
+  
+  command : firewall-cmd --remove-port=(port-number)/tcp
 
+   Example : firewall-cmd --remove-port=8080/tcp
+              firewall-cmd --reload          
+                                    
 11.Check the active zones
-  whcich is active 
-  which network interfaced is attached
-  how firewall applies the traffic rules
+
+ >  whcich is active 
+ >  which network interfaced is attached
+ >  how firewall applies the traffic rules
 
   command : firewall-cmd --get-active-zones
 
@@ -87,4 +105,23 @@ ZONE COMMANDS
 20.Change default zone
 
  command : firewall-cmd --set-default-zone=public 
- 
+
+21.Check weather a specific port is allowed in firewalld
+
+ command : firewall-cmd --query-port=(port-number)/tcp
+
+ Example : firewall-cmd --query-port=8080/tcp
+
+ output : 
+ yes --> port is allowed in firewalld
+ no -->port is not explicitly allowed in firewalld 
+
+22. Check weather a specific service is allowed
+
+ command : firewall-cmd --query-service=(service-name)
+
+ Example : firewall-cmd --query-service=http
+
+ yes ---> service is allowed
+ no --> service is not allowed
+   
