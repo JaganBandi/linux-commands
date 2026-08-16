@@ -400,7 +400,114 @@ by default it display the first 10 lines
    enter -> next line
 
    q     -> quit
+===========================================================================================
+grep -->Search Text Inside a File
+
+1. grep is used to search a pattern inside a file
+
+Syntax : grep "word" filename
+
+Example : grep "jenkins" jenkins.sh
+
+2.grep -i ignore case while Searching
+
+it seaches for text with lowercase and uppercase letters
+
+Syntax : grep -i "word" filename
+
+Example : grep -i "jenkins" jenkins.sh
+
+3. grep -n search for text and shows the line number where the match found
+
+  Syntax : grep -n "word" filename
+
+  Example : grep -n "word" filename
+
+            38:dnf install -y jenkins
+            41:systemctl enable jenkins
+            42:systemctl start jenkins
+
+4. grep -v : display the line that do not contain the specifed word
+
+   Syntax : grep -v "word" filename
+
+   Example : grep -v "jenkins" jenkins.sh
+
+5. grep -r searches for word patteren inside all files and in a directories and its subdirectories
+
    
+   Syntax : grep -r "word" filename
+
+   Example : grep -r "Docker" /opt/project1
+
+  > ignore case 
+
+   Syntax : grep -ri "docker" /opt/project1
+
+=================================================================================================
+sed -->Stream Editor
+
+1. sed command is used to search , replace, delete, or print a text with out enter a editor
+
+>s is sed stands for substitute and it is used for replace the old text with new text
+
+Syntax : sed 'operation' filename
+
+Example : sed 's/Linux/DevOps' testfile.txt
+
+s --> substitue/replace
+Linux --> old text
+DevOps --> new text
+
+2. sed -i permanent replcement inside the file
+
+ Syntax : sed -i 's/old/new' filename
+
+ Example : sed -i 's/DevOps/Linux' testfile.txt
+
+ the file is permanently modify , we use sed without i after modify peramently sed only change the file temporarly original file cannot modify
+
+3. global replacement (g) : it replcaes the matches occuerances in each line ,not just first one
+
+  Syntax : sed 's/old/new/g' filename
+
+  Example : 
+  > cat >> tools.txt
+ 
+  Docker Docker Jenkins
+  Linux Docker Docker
+
+  Ctrl + D
+
+  command : sed 's/Docker/Kubernetes/g' tools.txt
+
+  > cat tools.txt 
+
+  Kubernetes Kubernetes Jenkins
+  Linux Kubernetes Kubernetes
+
+  we want to chanage permanently use "sed -i" 
+
+4. Deleting Lines : sed 'Nd' --> Delete a specific lines
+ 
+   N -> Number of Lines
+   d -> Delete
+
+   Syntax : sed 'Nd' filename
+
+   Example : sed '2d' testfile.txt -->delete lines from the output
+
+   we want use to delete permanently sed -i 
+
+   Example : sed -i '2d' testfile.txt --> delete lines permanently from the file
+
+
+
+
+  
+
+   
+
 
 
 
