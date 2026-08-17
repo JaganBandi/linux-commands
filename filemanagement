@@ -501,6 +501,89 @@ DevOps --> new text
 
    Example : sed -i '2d' testfile.txt --> delete lines permanently from the file
 
+5.sed -n --> print specific lines
+
+ sed -n is used to show only the specific lines 
+
+ Syntax : sed -n 'Np' filename
+
+  N = number of lines
+  p = print
+  -n = normal output
+
+  Example: sed -n '5p' textfile.txt
+
+  if we want to print mulptiple lines
+
+  Example : sed -n '2,5p' textfile.txt
+
+  it prints the line 2 through 5
+
+6. sed -n '/word/p' -->print the matching lines
+
+   Syntax : sed -n '/word/p' filename
+
+   Example : sed -n '/jenkins/p' jenkins.sh
+=====================================================================================================
+wc --> word count
+
+1. wc is used to count lines, words, and bytes in a file
+
+Syntax : wc filename
+
+Example : wc /opt/testfile.txt
+
+Example output : 5  12  78  /opt/devops.txt
+
+5 --> lines
+
+12 ---> words
+
+78 --> bytes
+
+2. wc -l counts only number of lines
+
+  Syntax : wc -l filename
+
+  Example : wc -l /opt/devops.txt
+
+  Example output : 78  /opt/devops.txt
+
+  78 --> lines
+
+  /opt/devops.txt --> filename
+=================================================================================================
+
+1. find --> Search files and directories
+
+find is used to search for files or directories by name
+
+Syntax : find path -n filename
+
+Example : find /opt -name "jenkins-setup.sh"
+
+2. find -type d -->Searches for only directories
+
+  find path -type d -name "directory_name"
+
+  Example : find /var -type d -name "log"
+
+3. find files larger than a size
+
+   Syntax : find path -type f -size file-size
+
+   Example : find /opt -type f -size +100M    
+
+=====================================================================================================
+1.stat -->shows detailed information about a file, including size, inode, permissions, and timestamps.
+
+Syntax : stat filename
+
+Example : stat /opt/testfile.txt
+
+
+
+
 
 
 
