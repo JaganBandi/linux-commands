@@ -6,6 +6,14 @@ Shows the filesystem usage and avaliable spaces
 
  Command : df -h
 
+ command : df -i --> display the inode usage instead of storage size for all mounted filesystems
+
+ Example : df -i /var 
+
+ df --> displays the filesystem usage
+ -i --> displays the inode usage instaed of storage size
+ /var --> check the file system containing
+
 
 2. Check the Directory Size
 
@@ -213,4 +221,20 @@ Files & Directories
    Avoid rebooting after partition changes
 
   syntax : partprobe /dev/nvme0n1
+
+17. parted
+
+   parted is linux disk parition utility used to create, delete, modify, resize and manage paritions on both MBR (DOS) and GPT disks
+
+   Command : parted
+
+   then after (parted): print
+
+   print : it displays the Disk Name, Disk Size, Partition table type(msdos and gpt), Existing partitions,Start and End Partitions, File system type, Flags
+
+18. Fourth End Filesystem :
+
+   Command : mkfs.ext4
+
+   mkfs.ext4 creates an EXT4 filesystem on a partition, making it ready to store files and directories.
   
