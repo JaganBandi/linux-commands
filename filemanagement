@@ -580,21 +580,74 @@ Example : find /opt -name "jenkins-setup.sh"
 Syntax : stat filename
 
 Example : stat /opt/testfile.txt
+====================================================================================================
+File Permissions 
+=====================================================================================================
+1. chmod ---> Change permissions
+
+chmod is used to change the file and directories permissions
+
+4 = read(r)
+2 = write(w)
+1 = excute(x)
+
+add them together
+
+7 : 4 + 2 + 1 = rwx
+6 : 4 + 2     = r-w
+5 : 4+1       = r-x
+4 : 4         = r--
+3 : 2 + 1     = -wx
+2 : 2         = -w-
+1 : 1         = --x
+0 : 0         = ---
+
+Example = chmod 755 testfile.txt
+
+it gives read, write, execute to the owner and read, execute to group and others.
 
 
+2. chown -->change file owner
+
+chown is used to change the owner of a file or directory
+
+Syntax : chown username filename
+
+Example : chown server testfile.txt
+
+> change owner and group 
+
+  chown username:groupname filename
+
+  Example : chown server:devops testfile.txt
 
 
+3. chgrp --> change group only
+
+chgrp is used to change the group of a file or directory.
+
+Syntax : chgrp groupname filename
+
+==================================================================================================
+ln ---> hardlink 
+
+ln creates another filename that points to same inode and same file data.Renaming or deleting one hard-link name does not affect the other as long as at least one hard link remains
+
+Synatx : ln original_file hardlink_name
+
+Example : ln testfile testfile-hardlink
 
 
+ln -s --> symlink(Symbolic/softlink)
 
-  
+ln -s creates a symbolic link that points to the path of another file or directory.
 
-   
+> different inode number
+> if we rename original file of a symlink , the symlink usually broken because it still point old path
+
+Syntax : ln -s source_file filename
 
 
-
-
-  
 
 
 
