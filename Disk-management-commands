@@ -6,7 +6,7 @@ Shows the filesystem usage and avaliable spaces
 
  Command : df -h
 
- command : df -i --> display the inode usage instead of storage size for all mounted filesystems
+ command : df -i --> display the inode usage instead of storage size for all mounted files
 
  Example : df -i /var 
 
@@ -236,5 +236,67 @@ Files & Directories
 
    Command : mkfs.ext4
 
+   Example : mkfs.ext4 /dev/ext4-vg/ext4-lv
+
    mkfs.ext4 creates an EXT4 filesystem on a partition, making it ready to store files and directories.
+
+
+
+19. volume group :
+
+   volume group is pool created by combining one or more physical volumes
+
+   Command : vgcreate
+
+   Example : vgcreate devops-vg /dev/nvme0n1p3
+   
+  verify : vgs
+
+20 . Logical volume 
+
+   lvcreate creates a Logical Volume from the available storage in a Volume Group. The Logical Volume can then be formatted with a filesystem and mounted for storing data.
+
+   command : lvcreate 
+
+   Example : lvcreate -L 1G -n data-lv devops-vg
+
+   verify  : lvs
+
+   lvcreate --> creates logical volume
+
+   -L 1G   --> LV Size = 1GB
+
+   -n data-lv --> Logical Volume Name
+
+   devops -vg --> Take storage from vg
+
+21. Detailed Information Logical volumes
+
+    command : lvdisplay
+
+22. lvextend increases the size of an existing LVM Logical Volume using free space available in its Volume Group
+
+     Command : lvextend
+
+     Example : lvextend -L +500M /dev/devops-vg/data-lv
+
+     Differnece : -L 500  - > set total lv size is 500
+                  +500    - > ADD Another 500mb
+
+
+23. xfs_growfs expands an XFS filesystem so it can use additional space that has been added to its underlying storage
+
+     Command : xfs_growfs
+
+     Example : xfs_growfs /devops-data
+
+
+24 . resize2fs resizes an EXT2/EXT3/EXT4 filesystem to use the additional space available on its  underlying device.
+
+     Command : resize2fs
+
+     Example : resize2fs /dev/ext4-vg/ext4-lv
+
+
+
   
