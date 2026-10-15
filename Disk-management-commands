@@ -41,16 +41,24 @@ Shows the filesystem usage and avaliable spaces
   pvs shows the physical storage supplied to LVM.
 
   PFree = 0 : It means all physical volume [Eg:19GB] has been allocated to logical volumes
-
+-------------------------------------------------------------------------------------------
+Physical Volume :
 
 5. Create a physical Volume
 
-  Command : pvcreate /dev/nvme1n1p1
+  Command : pvcreate /dev/nvme0n2p1
 
   verify : pvs
    
+  Command : pvdisplay 
 
-5. View the Volume Groups
+  the above command display the detailed information about the pv information
+
+  Example : pvdisplay /dev/nvem0n2p1
+-------------------------------------------------------------------------------------------
+Volume Groups
+
+6. View the Volume Groups
 
   Command : vgs
 
@@ -68,6 +76,23 @@ Shows the filesystem usage and avaliable spaces
 
   VFree = 0 : It means No free space remains in the Volume Group
 
+  Command : vgcreate 
+
+  used to create volume group
+
+  Example : vgcreate vg_data /dev/nevme0n2p1
+
+  vg_data --> the name assigned to it
+
+
+  Command : vgdisplay 
+
+  used to display the detailed information about the volume Group
+
+  Example : vgdisplay vg_data /dev/nevme0n2p1
+---------------------------------------------------------------------------------------------
+Logical Volume :
+
 
  6. Show Logical Volumes
  
@@ -83,6 +108,29 @@ Shows the filesystem usage and avaliable spaces
   i — Uses normal linear allocation.
   a — Logical volume is active.
   o — Logical volume is open and currently in use. 
+
+  Command : lvcreate 
+
+  Used to Create a Logical Volume(lvs)
+
+  Example : lvcreate -L 1G -n lv_data vg_data
+
+  -n : used to assign name to logical volume 
+  vg_data : selects the our Volume Group
+
+  Verify : lvs
+
+ Command : lvdisplay 
+
+ show the detailed information 
+
+ Example : lvdisplay /dev/vg_data/lv_data
+
+ Command : lvextend 
+
+ Example : lvextend -r -L +500 /dev/vg_data/lv_data
+
+-----------------------------------------------------------------------------
 
 7. Check the Swap is active
 
